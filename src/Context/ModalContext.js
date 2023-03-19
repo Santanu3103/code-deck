@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-export const ModalContext = createContext();
+export const ModalContext = createContext(); // creation phase;
 
 function ModalProvider({ children }) {
   const intialModalFields = {
@@ -19,12 +19,12 @@ function ModalProvider({ children }) {
   };
   // this object is having properties that i need in my whole app;
   const ModalFeatures = {
-    isOpenModal: isOpenModal,
-    openModal: openModal,
-    closeModal: closeModal,
+    isOpenModal: isOpenModal, // state
+    openModal: openModal, // fn
+    closeModal: closeModal, // fn
   };
-  return (
-    <ModalContext.Provider value={ModalFeatures}>
+  return ( // pass things using value in context;
+    <ModalContext.Provider value={ModalFeatures}>  
       {children}
     </ModalContext.Provider>
   );
@@ -32,5 +32,7 @@ function ModalProvider({ children }) {
 
 export default ModalProvider;
 
-// we will setup router.
-// playground context.
+
+// 1. creation phase (export const ModalContext = createContext();)
+// 2. providing phase (passing things that are required in whole app in value prop of Context.Provider)
+// 3. consuming phase (to be discussed)
