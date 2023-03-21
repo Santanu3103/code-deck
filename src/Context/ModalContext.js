@@ -3,13 +3,14 @@ export const ModalContext = createContext(); // creation phase;
 
 function ModalProvider({ children }) {
   const intialModalFields = {
-    show: false,
-    modalType: "",
+    show: false, // true
+    modalType: "", // 3
     identifiers: {
       folderId: "",
       cardID: "",
     },
   };
+  // deep copy 
   const [isOpenModal, setIsOpenModal] = useState({ ...intialModalFields });
   const openModal = (value) => {
     setIsOpenModal(value);
