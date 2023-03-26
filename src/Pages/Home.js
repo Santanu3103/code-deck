@@ -6,11 +6,11 @@ import { ModalContext } from "../Context/ModalContext";
 function Home() {
   const { isOpenModal } = useContext(ModalContext);
   return (
-    <div className="grid grid-cols-2">
-      <div>
+    <div className="grid grid-cols-3">
+      <div >
         <LeftPaneHomeScreen />
       </div>
-      <div>
+      <div className="col-span-2">
         <RightPaneHomeScreen />
       </div>
       {isOpenModal.show && <Modal />}
